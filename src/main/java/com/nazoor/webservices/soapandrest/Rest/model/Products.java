@@ -5,8 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Products {
+
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer productID;
@@ -18,6 +21,16 @@ public class Products {
     private Integer productQTY;
 
     private boolean productAVL;
+
+    public Products() {
+    }
+
+    public Products(String productName, String productType, int productQTY, boolean productAVL) {
+        this.productName = productName;
+        this.productType = productType;
+        this.productQTY = productQTY;
+        this.productAVL = productAVL;
+    }
 
 
     public Integer getProductID() {

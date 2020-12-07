@@ -14,5 +14,7 @@ public interface ProductService {
 
     String deleteProduct(int productId); // delete a product
 
+    Products getProductById(int productId); // get product by Id
+
 
 }

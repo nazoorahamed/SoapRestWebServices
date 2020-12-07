@@ -43,4 +43,9 @@ public class ProductServiceImpl implements ProductService {
         repository.deleteById(productId);
         return "Deleted";
     }
+
+    @Override
+    public Products getProductById(int productId) {
+        return repository.findById(productId).orElse(null);
+    }
 }
