@@ -2,9 +2,11 @@ package com.nazoor.webservices.soapandrest.Rest.service;
 
 import com.nazoor.webservices.soapandrest.Rest.model.Products;
 
-import java.util.List;
-
 public interface ProductService {
+
+    /**
+     * Both REST and SOAP services use these services.
+     */
 
     Products addProducts(Products products);   // add a new Product
 

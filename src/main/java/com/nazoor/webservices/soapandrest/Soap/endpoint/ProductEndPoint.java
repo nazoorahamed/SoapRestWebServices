@@ -26,6 +26,12 @@ public class ProductEndPoint {
         this.productService = productService;
     }
 
+
+    /**
+     * Add new Product Using SOAP
+     * @param
+     * @return
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getProductRequest")
     @ResponsePayload
     public GetProductResponse getProducts(@RequestPayload GetProductRequest request) {
@@ -43,6 +49,11 @@ public class ProductEndPoint {
         return productResponse;
     }
 
+    /**
+     * Add new Product Using SOAP
+     * @param
+     * @return
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "addProductRequest")
     @ResponsePayload
     public AddProductResponse addProducts(@RequestPayload AddProductRequest request) {
@@ -62,6 +73,11 @@ public class ProductEndPoint {
         return response;
     }
 
+    /**
+     * Update Products Using SOAP
+     * @param
+     * @return
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "updateProductRequest")
     @ResponsePayload
     public UpdateProductResponse updateProduct(@RequestPayload UpdateProductRequest request){
@@ -84,6 +100,11 @@ public class ProductEndPoint {
         return response;
     }
 
+    /**
+     * Delete Product Using SOAP
+     * @param
+     * @return
+     */
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "deleteProductRequest")
     @ResponsePayload
     public DeleteProductResponse deleteProduct (@RequestPayload DeleteProductRequest request) {
@@ -93,5 +114,4 @@ public class ProductEndPoint {
         response.setStatus(delete);
         return response;
     }
-
 }

@@ -9,7 +9,6 @@ import javax.persistence.Id;
 @Entity
 public class Products {
 
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer productID;
@@ -31,7 +30,6 @@ public class Products {
         this.productQTY = productQTY;
         this.productAVL = productAVL;
     }
-
 
     public Integer getProductID() {
         return productID;
