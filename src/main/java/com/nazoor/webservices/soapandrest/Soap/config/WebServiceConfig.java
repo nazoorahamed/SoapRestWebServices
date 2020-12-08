@@ -14,7 +14,9 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class WebServiceConfig {
-
+    /**
+     * Configuration for SOAP web service. injecting ApplicationContext to messageDispatcherServlet for registering Spring beans.
+     */
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
@@ -23,6 +25,10 @@ public class WebServiceConfig {
         return new ServletRegistrationBean(servlet, "/ws/*");
     }
 
+    /**
+     * DefaultWsdl11Definition exposes a standard WSDL by using XsdSchema.
+     * In this application The WSDL file exposed as  http://localhost:8080/ws/products.wsdl
+     */
     @Bean(name = "products")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
